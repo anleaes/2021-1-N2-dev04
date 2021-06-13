@@ -25,38 +25,31 @@
     <div class="collapse navbar-collapse" id="navbarsExample05">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown05">
-                    <a class="dropdown-item" href="#">Healt Professionals</a>
-                    <a class="dropdown-item" href="#">Patients</a>
-                    <a class="dropdown-item" href="#">Anamnesis</a>
-                    <a class="dropdown-item" href="#">Patient Evolution</a>
-                    <a class="dropdown-item" href="#">Vital Signs</a>
-                    <a class="dropdown-item" href="#">Administered Medicines</a>
-                    <a class="dropdown-item" href="#">Doctors Prescription</a>
-                </div>
-            </li>
-        </ul>
-        <form action="#" method="GET" class="form-inline my-2 my-md-0" style="margin-right: 10px">
-            <input class="form-control" name="query" type="text" aria-label="Buscar" style="margin-right: 10px">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nome de usuario</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown05">
-                        <a class="dropdown-item" href="#">Trocar senha</a>
-                        <a class="dropdown-item" href="#">Conta</a>                            
-                        <a class="dropdown-item" href="#">Sair</a>
-                    </div>
-                </li>
-            </ul>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                  <li><a class="dropdown-item" href="#">Healt Professionals</a></li>
+                  <li><a class="dropdown-item" href="#">Patients</a></li>
+                  <li><a class="dropdown-item" href="#">Anamnesis</a></li>
+                  <li><a class="dropdown-item" href="#">Patient Evolution</a></li>
+                  <li><a class="dropdown-item" href="#">Vital Signs</a></li>
+                  <li><a class="dropdown-item" href="#">Administered Medicines</a></li>
+                  <li><a class="dropdown-item" href="#">Doctors Prescription</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Usuário</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown05">
+                  <li><a class="dropdown-item" href="#">Trocar senha</a></li>
+                  <li><a class="dropdown-item" href="#">Conta</a></li>
+                  <li><a class="dropdown-item" href="#">Sair</a></li>
+                </ul>
+              </li>
     </div>
 </nav>
 <!-- FIM: Bloco do Bootstrap a ser incluido -->
     {% endblock body %}
     
-    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'js/jquery.mask.min.js' %}"></script>
     <script src="{% static 'js/jquery-ui.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
