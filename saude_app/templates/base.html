@@ -40,8 +40,9 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">{{ user.get_full_name|default:user.username }}</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                  <li><a class="dropdown-item" href="{% url 'auth_users:user_change_information' user.username %}">Conta</a></li>
+                  <li><a class="dropdown-item" href="{% url 'auth_users:user_change_information' user.username %}">Editar Conta</a></li>
                   <li><a class="dropdown-item" href="{% url 'auth_users:user_change_password' %}">Trocar senha</a></li>
+                  <li><a class="dropdown-item" href="{% url 'auth_users:add_user' %}">Adicionar Conta</a></li>
                   <li><a class="dropdown-item" href="{% url 'auth_users:user_logout' %}">Sair</a></li>
                 </ul>
               </li>
