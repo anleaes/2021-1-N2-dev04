@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'core.apps.CoreConfig', 
     'auth_users.apps.AuthUsersConfig',
+    'patients.apps.PatientsConfig',
 ]
 
 MIDDLEWARE = [
