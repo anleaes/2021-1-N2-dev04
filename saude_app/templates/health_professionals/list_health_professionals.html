@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Médicos - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Médicos</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'health_professionals:add_health_professionals' %}">Cadastro de novos médicos</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">CRM</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sobrenome</th>
+                    <th scope="col">Endereco</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Especialidade</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+<tbody>
+                    {% for health_professionals in health_professionals %}
+                        <tr>
+                            <th scope="row">{{ health_professionals.crm }}</th>
+                            <td>{{ health_professionals.first_name }}</td>
+                            <td>{{ health_professionals.last_name }}</td>
+                            <td>{{ health_professionals.address }}</td>
+                            <td>{{ health_professionals.cell_phone }}</td>
+                            <td>{{ health_professionals.email }}</td>
+                            <td>{{ health_professionals.gender }}</td>
+                            <td>{{ health_professionals.medical_speciality }}</td>
+                            <td>
+                                <a href="{% url 'health_professionals:edit_health_professionals' health_professionals.crm %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'health_professionals:deletehealth_professionals' health_professionals.crm %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
