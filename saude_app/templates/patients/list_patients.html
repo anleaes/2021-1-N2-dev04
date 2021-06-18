@@ -51,7 +51,7 @@
                                 <a href="{% url 'patients:edit_patient' patient.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
                             <td>
-                                <a href="{% url 'patients:deletepatient' patient.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                                <a href="{% url 'patients:delete_patient' patient.id %}" class="btn btn-danger btn-sm ">Excluir</a>
                             </td>
                         </tr> 
                     {% endfor %}
