@@ -4,7 +4,7 @@ from .models import Patient
 
 
 def add_patient(request):
-    template_name = 'patients/add_patient.html'
+    template_name = 'patients/add_patients.html'
     context = {}
     if request.method == 'POST':
         form = PatientForm(request.POST)
@@ -25,7 +25,7 @@ def list_patients(request):
     return render(request, template_name, context)
 
 def edit_patient(request, id_patient):
-    template_name = 'patients/add_patient.html'
+    template_name = 'patients/add_patients.html'
     context ={}
     patient = get_object_or_404(Patient, id=id_patient)
     if request.method == 'POST':
