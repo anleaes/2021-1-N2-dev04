@@ -1,0 +1,10 @@
+saude_app/.env
+saude_app/__pycache__
+saude_app/apps/core/__pycache__/*
+saude_app/apps/core/migrations/*
+saude_app/apps/auth_users/__pycache__/*
+saude_app/apps/auth_users/migrations/*
+saude_app/apps/heath_professionals/__pycache__/*
+saude_app/apps/heath_professionals/migrations/*
+saude_app/apps/patients/__pycache__/*
+saude_app/apps/patients/migrations/*
