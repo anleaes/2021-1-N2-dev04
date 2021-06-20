@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'core.apps.CoreConfig',
     'health_professionals.apps.HealthProfessionalsConfig',
+    'core.apps.CoreConfig', 
+    'auth_users.apps.AuthUsersConfig',
+    'patients.apps.PatientsConfig',
 ]
 
 MIDDLEWARE = [

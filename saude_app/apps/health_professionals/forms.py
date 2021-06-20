@@ -1,8 +1,8 @@
 from django import forms
-from .models import health_professionals
+from .models import HealthProfessional
 
 class HealthProfessionalsForm(forms.ModelForm):
 
     class Meta:
-        model = health_professionals
+        model = HealthProfessional
         exclude = ()
