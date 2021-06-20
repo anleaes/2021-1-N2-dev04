@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
+    path('medicos/', include('health_professionals.urls', namespace='health_professionals')),
     path('autenticacao/', include('auth_users.urls', namespace='auth_users')),
     path('patients/', include('patients.urls', namespace='patients')),
 ]

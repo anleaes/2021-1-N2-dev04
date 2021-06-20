@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    
     {% block body %}
     
 <!-- INICIO: Bloco do Bootstrap a ser incluido -->
@@ -28,7 +29,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                  <li><a class="dropdown-item" href="#">Healt Professionals</a></li>
+                  <li><a class="dropdown-item" href="{% url 'health_professionals:list_health_professionals' %}">Health Professionals</a></li>
                   <li><a class="dropdown-item" href="{% url 'patients:list_patients' %}">Patients</a></li>
                   <li><a class="dropdown-item" href="#">Anamnesis</a></li>
                   <li><a class="dropdown-item" href="#">Patient Evolution</a></li>
