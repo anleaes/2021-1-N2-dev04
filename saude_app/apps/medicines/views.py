@@ -1,9 +1,6 @@
-from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import MedicineForm
 from .models import Medicine
-
-# Create your views here.
 
 def add_medicine(request):
     template_name = 'medicines/add_medicine.html'
@@ -21,9 +18,9 @@ def add_medicine(request):
 
 def list_medicines(request):
     template_name = 'medicines/list_medicines.html'
-    medicine = Medicine.objects.filter()
+    medicines = Medicine.objects.filter()
     context = {
-        'medicines': medicine
+        'products': medicines
     }
     return render(request, template_name, context)
 
@@ -44,4 +41,3 @@ def delete_medicine(request, id_medicine):
     medicine = Medicine.objects.get(id=id_medicine)
     medicine.delete()
     return redirect('medicines:list_medicines')
-
