@@ -10,3 +10,7 @@ saude_app/apps/patients/__pycache__/*
 saude_app/apps/patients/migrations/*
 saude_app/apps/anamnesis/__pycache__/*
 saude_app/apps/anamnesis/migrations/*
+saude_app/apps/categories/__pycache__/*
+saude_app/apps/categories/migrations/*
+saude_app/apps/medicines/__pycache__/*
+saude_app/apps/medicines/migrations/*
