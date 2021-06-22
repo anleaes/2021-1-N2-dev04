@@ -16,3 +16,6 @@ class Anamnesis(models.Model):
         verbose_name = 'Anamnese'
         verbose_name_plural = 'Anamneses'
         ordering =['id']
+
+    def _str_(self):
+        return self.main_complaint

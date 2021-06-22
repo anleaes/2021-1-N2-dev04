@@ -19,7 +19,7 @@
                 <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="{{ form.health_professional.id_for_label }}">Médico</label>
+                    <label for="{{ form.health_professional.id_for_label }}">Doutor</label>
                     {{ form.health_professional|add_class:"form-control" }}
                 </div>
                 <div class="form-group">

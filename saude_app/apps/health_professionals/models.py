@@ -7,7 +7,6 @@ class HealthProfessional(models.Model):
     cell_phone = models.CharField('Telefone celular', max_length=20)
     email = models.EmailField('E-mail',null=False, blank=False)
     medical_speciality = models.CharField('Especialidade', max_length=50)
-
     GENDER_CHOICES = (
         ('M', 'Masculino'),
         ('F', 'Feminino'),
@@ -20,5 +19,5 @@ class HealthProfessional(models.Model):
         verbose_name_plural = 'Médicos'
         ordering =['id']
 
-    def str(self):
-        return self.first_name
+    def __str__(self):
+        return '%s %s' % (self.first_name, self.last_name)

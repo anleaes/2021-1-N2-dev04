@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import AnamnesisForm
-from .models import Anamnesis
+from .models import Anamnesis, Patient, HealthProfessional
 
 
 def add_anamnesis(request):
@@ -10,6 +10,8 @@ def add_anamnesis(request):
         form = AnamnesisForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
+            f.health_professional = Client.objects.get(id=id_health_professional)
+            f.patient = Patient.objects.get(id=id_patient)
             f.save()
             form.save_m2m()
             return redirect('anamnesis:list_anamnesis')
@@ -20,8 +22,12 @@ def add_anamnesis(request):
 def list_anamnesis(request):
     template_name = 'anamnesis/list_anamnesis.html'
     anamnesis = Anamnesis.objects.filter()
+    health_professionals = HealthProfessional.objects.filter()
+    patients = Patient.objects.filter()
     context = {
-        'anamnesis': anamnesis
+        'anamnesis': anamnesis,
+        'health_professionals': health_professionals,
+        'patients': patients
     }
     return render(request, template_name, context)
 
