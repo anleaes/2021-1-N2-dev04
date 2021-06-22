@@ -31,12 +31,13 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
                   <li><a class="dropdown-item" href="{% url 'health_professionals:list_health_professionals' %}">Health Professionals</a></li>
                   <li><a class="dropdown-item" href="{% url 'patients:list_patients' %}">Patients</a></li>
-                  <li><a class="dropdown-item" href="#">Anamnesis</a></li>
+                  <li><a class="dropdown-item" href="{% url 'anamnesis:list_anamnesis' %}">Anamnesis</a></li>
                   <li><a class="dropdown-item" href="#">Patient Evolution</a></li>
                   <li><a class="dropdown-item" href="#">Vital Signs</a></li>
                   <li><a class="dropdown-item" href="#">Administered Medicines</a></li>
                   <li><a class="dropdown-item" href="{% url 'medicines:list_medicines' %}">Medicines</a></li>
                   <li><a class="dropdown-item" href="{% url 'categories:list_categories' %}">Categories</a></li>
+                  <li><a class="dropdown-item" href="#">Doctors Prescription</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">

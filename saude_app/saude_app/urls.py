@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('medicos/', include('health_professionals.urls', namespace='health_professionals')),
     path('autenticacao/', include('auth_users.urls', namespace='auth_users')),
+    path('anamnese/', include('anamnesis.urls', namespace='anamnesis')),
     path('patients/', include('patients.urls', namespace='patients')),
     path('medicines/', include('medicines.urls', namespace='medicines')),
     path('categorias/', include('categories.urls', namespace='categories')),

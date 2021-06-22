@@ -1,0 +1,55 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Anamneses - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{ block.super }}
+    <div class="container">
+        <br />
+        <h5><b>Lista de Anamneses</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'anamnesis:add_anamnesis' %}">Cadastro de Anamnese</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Médico</th>
+                    <th scope="col">Paciente</th>
+                    <th scope="col">Queixa Principal</th>
+                    <th scope="col">Alergias</th>
+                    <th scope="col">Hábitos de vida</th>
+                    <th scope="col">Histórico Familiar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for AnAnamnesis in anamnesis %}
+                        <tr>
+                            <th scope="row">{{ AnAnamnesis.id }}</th>
+                            <td>{{ AnAnamnesis.health_professional }}</td>
+                            <td>{{ AnAnamnesis.patient }}</td>
+                            <td>{{ AnAnamnesis.main_complaint }}</td>
+                            <td>{{ AnAnamnesis.allergies }}</td>
+                            <td>{{ AnAnamnesis.habits }}</td>
+                            <td>{{ AnAnamnesis.family_history }}</td>
+                            <td>
+                                <a href="{% url 'anamnesis:edit_anamnesis' AnAnamnesis.id %}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="{% url 'anamnesis:delete_anamnesis' AnAnamnesis.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

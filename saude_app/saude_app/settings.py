@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'health_professionals.apps.HealthProfessionalsConfig',
     'core.apps.CoreConfig', 
     'auth_users.apps.AuthUsersConfig',
+    'anamnesis.apps.AnamnesisConfig',
     'patients.apps.PatientsConfig',
     'medicines.apps.MedicinesConfig',
     'categories.apps.CategoriesConfig'
