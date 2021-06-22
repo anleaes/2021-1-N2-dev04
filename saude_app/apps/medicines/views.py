@@ -20,7 +20,7 @@ def list_medicines(request):
     template_name = 'medicines/list_medicines.html'
     medicines = Medicine.objects.filter()
     context = {
-        'products': medicines
+        'medicines': medicines
     }
     return render(request, template_name, context)
 
