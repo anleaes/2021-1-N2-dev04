@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block body %}
-
+{{ block.super }}
     <div class="container">
         <br />
         <h5><b>Lista de Categorias</b></h5>
@@ -15,10 +15,6 @@
             <div class ="col-md-12">
                 <br />
                  <a href="{% url 'categories:add_category' %}">Cadastro de novo categoria</a>
-                <br />
-                <br />
-                <br />
-                    <a href="{% url 'categories:add_category' %}">Cadastro de nova categoria</a>
                 <br />
                 <br />
                 <table class="table table-hover">

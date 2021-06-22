@@ -27,6 +27,7 @@ urlpatterns = [
     path('autenticacao/', include('auth_users.urls', namespace='auth_users')),
     path('anamnese/', include('anamnesis.urls', namespace='anamnesis')),
     path('patients/', include('patients.urls', namespace='patients')),
+    path('categories/', include('categories.urls', namespace='categories')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
