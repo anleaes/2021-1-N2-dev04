@@ -14,3 +14,5 @@ saude_app/apps/categories/__pycache__/*
 saude_app/apps/categories/migrations/*
 saude_app/apps/medicines/__pycache__/*
 saude_app/apps/medicines/migrations/*
+saude_app/apps/vital_signs/__pycache__/*
+saude_app/apps/vital_signs/migrations/*
