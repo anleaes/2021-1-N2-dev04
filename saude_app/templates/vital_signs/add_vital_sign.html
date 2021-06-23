@@ -1,0 +1,58 @@
+
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Sinais Vitais - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{ block.super }}
+    <div class="container">
+        <br />
+    <h5><b>Adicionar Sinais Vitais</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.patient.id_for_label }}">Paciente</label>
+                    {{ form.patient|add_class:"form-control" }}
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="{{ form.heart_rate.id_for_label }}">Frequência Cardíaca</label>
+                    {{ form.heart_rate|add_class:"form-control" }}
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="{{ form.respiratory_frequency.id_for_label }}">Frequência Respiratória</label>
+                    {{ form.respiratory_frequency|add_class:"form-control" }}
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="{{ form.body_temperature.id_for_label }}">Temperatura Corporal</label>
+                    {{ form.body_temperature|add_class:"form-control" }}
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="{{ form.blood_pressure.id_for_label }}">Pressão Arterial</label>
+                    {{ form.blood_pressure|add_class:"form-control" }}
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="{{ form.date.id_for_label }}">Data Medição</label>
+                    {{ form.date|add_class:"form-control" }}
+                </div>
+                <br />
+                <br />
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

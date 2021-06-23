@@ -23,12 +23,13 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
-    path('medicos/', include('health_professionals.urls', namespace='health_professionals')),
+    path('profissionais_saude/', include('health_professionals.urls', namespace='health_professionals')),
     path('autenticacao/', include('auth_users.urls', namespace='auth_users')),
     path('anamnese/', include('anamnesis.urls', namespace='anamnesis')),
     path('patients/', include('patients.urls', namespace='patients')),
     path('medicines/', include('medicines.urls', namespace='medicines')),
     path('categorias/', include('categories.urls', namespace='categories')),
+    path('sinais_vitais/', include('vital_signs.urls', namespace='vital_signs')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
