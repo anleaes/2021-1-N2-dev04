@@ -9,7 +9,6 @@ class Patient(models.Model):
     birth = models.DateField('Data de Nascimento', max_length= 10)
     heigt = models.DecimalField('Altura', max_digits=4, decimal_places=2)
     weight = models.DecimalField('Peso', max_digits=6, decimal_places=2)
-
     GENDER_CHOICES = (
         ('M', 'Masculino'),
         ('F', 'Feminino'),
@@ -22,6 +21,5 @@ class Patient(models.Model):
         verbose_name_plural = 'Pacientes'
         ordering =['id']
 
-    def str(self):
-        return self.first_name
-# Create your models here.
+    def __str__(self):
+        return "%s %s" % (self.first_name, self.last_name)

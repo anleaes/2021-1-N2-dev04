@@ -19,7 +19,7 @@
     
 <!-- INICIO: Bloco do Bootstrap a ser incluido -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Saude App</a>
+    <a class="navbar-brand" href="{% url 'auth_users:user_login' %}">  Saude App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,15 +29,15 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                  <li><a class="dropdown-item" href="{% url 'health_professionals:list_health_professionals' %}">Health Professionals</a></li>
-                  <li><a class="dropdown-item" href="{% url 'patients:list_patients' %}">Patients</a></li>
-                  <li><a class="dropdown-item" href="{% url 'anamnesis:list_anamnesis' %}">Anamnesis</a></li>
-                  <li><a class="dropdown-item" href="#">Patient Evolution</a></li>
-                  <li><a class="dropdown-item" href="#">Vital Signs</a></li>
-                  <li><a class="dropdown-item" href="#">Administered Medicines</a></li>
-                  <li><a class="dropdown-item" href="{% url 'medicines:list_medicines' %}">Medicines</a></li>
-                  <li><a class="dropdown-item" href="{% url 'categories:list_categories' %}">Categories</a></li>
-                  <li><a class="dropdown-item" href="#">Doctors Prescription</a></li>
+                  <li><a class="dropdown-item" href="{% url 'health_professionals:list_health_professionals' %}">Profissionais da Saúde</a></li>
+                  <li><a class="dropdown-item" href="{% url 'patients:list_patients' %}">Pacientes</a></li>
+                  <li><a class="dropdown-item" href="{% url 'anamnesis:list_anamnesis' %}">Anamnese</a></li>
+                  <li><a class="dropdown-item" href="#">Evolução Pacientes</a></li>
+                  <li><a class="dropdown-item" href="#">Sinais vitais</a></li>
+                  <li><a class="dropdown-item" href="#">Medicamentos Ministrados</a></li>
+                  <li><a class="dropdown-item" href="{% url 'medicines:list_medicines' %}">Medicamentos</a></li>
+                  <li><a class="dropdown-item" href="{% url 'categories:list_categories' %}">Categorias</a></li>
+                  <li><a class="dropdown-item" href="#">Prescrições Médicas</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
