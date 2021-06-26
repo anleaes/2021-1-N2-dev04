@@ -1,11 +1,9 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import VitalSignsForm
 from .models import VitalSign , Patient
 
-# Create your views here.
-
-
+@login_required(login_url='/autenticacao/login/')
 def add_vital_sign(request):
     template_name = 'vital_signs/add_vital_sign.html'
     context = {}
@@ -20,6 +18,7 @@ def add_vital_sign(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def list_vital_signs(request):
     template_name = 'vital_signs/list_vital_signs.html'
     vital_signs = VitalSign.objects.filter()
@@ -30,6 +29,7 @@ def list_vital_signs(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def delete_vital_sign(request, id_vital_signs):
     vital_signs = VitalSign.objects.get(id=id_vital_signs)
     vital_signs.delete()

@@ -1,8 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import AnamnesisForm
 from .models import Anamnesis
 
-
+@login_required(login_url='/autenticacao/login/')
 def add_anamnesis(request):
     template_name = 'anamnesis/add_anamnesis.html'
     context = {}
@@ -17,6 +18,7 @@ def add_anamnesis(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def list_anamnesis(request):
     template_name = 'anamnesis/list_anamnesis.html'
     anamnesis = Anamnesis.objects.filter()
@@ -25,6 +27,7 @@ def list_anamnesis(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def edit_anamnesis(request, id_anamnesis):
     template_name = 'anamnesis/add_anamnesis.html'
     context ={}
@@ -38,6 +41,7 @@ def edit_anamnesis(request, id_anamnesis):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def delete_anamnesis(request, id_anamnesis):
     anamnesis = Anamnesis.objects.get(id=id_anamnesis)
     anamnesis.delete()

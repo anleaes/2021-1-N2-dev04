@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import MedicineForm
 from .models import Medicine
 
+@login_required(login_url='/autenticacao/login/')
 def add_medicine(request):
     template_name = 'medicines/add_medicine.html'
     context = {}
@@ -16,6 +18,7 @@ def add_medicine(request):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def list_medicines(request):
     template_name = 'medicines/list_medicines.html'
     medicines = Medicine.objects.filter()
@@ -24,6 +27,7 @@ def list_medicines(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def edit_medicine(request, id_medicine):
     template_name = 'medicines/add_medicine.html'
     context ={}
@@ -37,6 +41,7 @@ def edit_medicine(request, id_medicine):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def delete_medicine(request, id_medicine):
     medicine = Medicine.objects.get(id=id_medicine)
     medicine.delete()
