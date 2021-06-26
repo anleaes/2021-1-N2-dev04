@@ -10,9 +10,10 @@
 {{ block.super }}
     <div class="container">
         <br />
-        <h5><b>Lista de Pacientes</b></h5>
+        
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Lista de Pacientes</b></h2>
                 <br />
                     <a href="{% url 'patients:add_patient' %}">Cadastro de novo paciente</a>
                 <br />

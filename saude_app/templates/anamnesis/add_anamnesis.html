@@ -13,9 +13,11 @@
 {{ block.super }}
     <div class="container">
         <br />
-    <h5><b>Cadastro de Anamnese</b></h5>
+    
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Cadastro de Anamnese</b></h2>
+                <br />
                 <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
@@ -41,11 +43,14 @@
                 <div class="form-group">
                     <label for="{{ form.family_history.id_for_label }}">Historico Familiar</label>
                     {{ form.family_history|add_class:"form-control" }}
+                <br />
                 </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
             </div>
+            
         </div>
+        <br />
     </div>
 
 {% endblock body %}

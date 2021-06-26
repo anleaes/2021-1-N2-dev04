@@ -11,10 +11,10 @@
 {{ block.super }}
     <div class="container">
         <br />
-        <h5><b>Lista de Sinais Vitais</b></h5>
+        
         <div class="row">
-            <div class ="col-md-12">
-            <br />
+            <div class ="col-md-12" id=gbOpacity>
+            <h2><b>Lista de Sinais Vitais</b></h2>
             <br />
             <a href="{% url 'vital_signs:add_vital_sign' %}">Cadastro de Sinais Vitais</a>
             <br />
@@ -52,6 +52,7 @@
                 </table>
             </div>
         </div>
+        <br />
     </div>
 
 {% endblock body %}

@@ -1,0 +1,19 @@
+body {
+    background: url(/static/img/bg.jpg); 
+  }
+
+#gbOpacity{
+   opacity: 1;
+   /* display:flex; */
+   padding:15pt;
+  background:rgba(255, 255, 255, 0.72);
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   
+   border-radius: 1%;
+}
+
+.navPadding{
+    padding-left:20px
+}

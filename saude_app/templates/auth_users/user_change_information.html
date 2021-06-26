@@ -4,15 +4,18 @@
 {% load widget_tweaks %}
 
 {% block title %}
-    Novo usuario - {{ block.super}}
+    Alterar usuario - {{ block.super}}
 {% endblock title %}
 
 {% block body %}
-
+{{ block.super }}
     <div class="container">
+    </br>
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" id=gbOpacity>
+            
             <h1>Alterar usuario</h1>
+            </br>
                 <form action="" method="POST">
                 {% csrf_token %}
                     <div class="form-group">
@@ -27,6 +30,7 @@
                         <label for="{{ form.email.id_for_label }}">E-mail</label>
                         {{ form.email|add_class:"form-control" }}
                     </div>
+                    </br>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </form>
             </div>
