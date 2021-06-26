@@ -8,37 +8,46 @@
 {% endblock title %}
 
 {% block body %}
-
     <div class="container">
+    </br>
         <div class="row">
-            <div class="col-12">
+            
+            <div class="col-12" id=gbOpacity>
+            </br>
             <h1>Novo usuario</h1>
+            </br>
                 <form action="" method="POST">
                 {% csrf_token %}
                     <div class="form-group">
                         <label for="{{ form.first_name.id_for_label }}">Nome</label>
                         {{ form.first_name|add_class:"form-control"|attr:"autofocus" }}
                     </div>
+                </br>
                     <div class="form-group">
                         <label for="{{ form.last_name.id_for_label }}">Sobrenome</label>
                         {{ form.last_name|add_class:"form-control" }}
                     </div>
+                </br>
                     <div class="form-group">
                         <label for="{{ form.username.id_for_label }}">Nome de usuario</label>
                         {{ form.username|add_class:"form-control" }}
                     </div>
+                </br>
                     <div class="form-group">
                         <label for="{{ form.email.id_for_label }}">E-mail</label>
                         {{ form.email|add_class:"form-control" }}
                     </div>
+                </br>
                     <div class="form-group">
                         <label for="{{ form.password.id_for_label }}">Senha</label>
                         {{ form.password|add_class:"form-control"|attr:"type:password" }}
                     </div>
+                    </br>
                     <button type="submit" class="btn btn-primary">Salvar</button>
                 </form>
             </div>
         </div>
+    </br>
     </div>
 
 {% endblock body %}

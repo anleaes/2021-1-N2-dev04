@@ -10,11 +10,12 @@
 {{ block.super }}
     <div class="container">
         <br />
-        <h5><b>Lista de Médicos</b></h5>
+        
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Lista de Profissionais da Saúde</b></h2>
                 <br />
-                    <a href="{% url 'health_professionals:add_health_professionals' %}">Cadastro de novos médicos</a>
+                    <a href="{% url 'health_professionals:add_health_professionals' %}">Cadastro de novo Profissional da Saúde</a>
                 <br />
                 <br />
                 <table class="table table-hover">

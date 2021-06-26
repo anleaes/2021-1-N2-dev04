@@ -12,20 +12,28 @@
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
   <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/signin.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" >
+
 </head>
 <body class="text-center">
   <form class="form-signin" action="" method="POST">
   {% csrf_token %}
+    <div id=gbOpacity >
+    <img src="{% static 'img/logo_blue.svg' %}" width= 150px height= 150px >
     <h1 class="h3 mb-3 font-weight-normal">Identifique-se</h1>
+    </br>
     <label for="username" class="sr-only">Usuario</label>
     <input type="text" id="username" name="username" class="form-control" placeholder="Nome de usuario" required autofocus>
     <label for="password" class="sr-only">Senha</label>
     <input type="password" id="password" name="password" class="form-control" placeholder="Digite sua senha" required>
+    </br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-    <br />
+    </br>
     <a href="{% url 'auth_users:add_user' %}">Criar uma conta</a>
+  </div>
+  <label class="mb-3 font-weight-normal">Criado por dev04 - 2021</label>
   </form>
-
+  
   <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
   <script src="{% static 'js/jquery-ui.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>

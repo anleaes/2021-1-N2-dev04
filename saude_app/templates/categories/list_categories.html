@@ -10,9 +10,10 @@
 {{ block.super }}
     <div class="container">
         <br />
-        <h5><b>Lista de Categorias</b></h5>
+        
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Lista de Categorias</b></h2>
                 <br />
                  <a href="{% url 'categories:add_category' %}">Cadastro de novo categoria</a>
                 <br />
@@ -45,6 +46,7 @@
                 </table>
             </div>
         </div>
+        <br />
     </div>
 
 {% endblock body %}

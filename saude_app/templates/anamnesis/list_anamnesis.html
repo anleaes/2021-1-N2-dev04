@@ -11,9 +11,11 @@
 {{ block.super }}
     <div class="container">
         <br />
-        <h5><b>Lista de Anamneses</b></h5>
+       
         <div class="row">
-            <div class ="col-md-12">
+           
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Lista de Anamneses</b></h2>
                 <br />
                     <a href="{% url 'anamnesis:add_anamnesis' %}">Cadastro de Anamnese</a>
                 <br />
@@ -22,7 +24,7 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Médico</th>
+                    <th scope="col">Profissional da saúde</th>
                     <th scope="col">Paciente</th>
                     <th scope="col">Queixa Principal</th>
                     <th scope="col">Alergias</th>
@@ -35,7 +37,7 @@
                         <tr>
                             <th scope="row">{{ AnAnamnesis.id }}</th>
                             <td>{{ AnAnamnesis.health_professional }}</td>
-                            <td>{{ AnAnamnesis.patient }}</td>
+                            <td>{{ AnAnamnesis.patients }}</td>
                             <td>{{ AnAnamnesis.main_complaint }}</td>
                             <td>{{ AnAnamnesis.allergies }}</td>
                             <td>{{ AnAnamnesis.habits }}</td>

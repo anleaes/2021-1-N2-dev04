@@ -13,9 +13,10 @@
 {{ block.super }}
     <div class="container">
         <br />
-    <h5><b>Adicionar Sinais Vitais</b></h5>
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Adicionar Sinais Vitais</b></h2>
+                <br />
                 <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
@@ -53,6 +54,7 @@
                 </form>
             </div>
         </div>
+        <br />
     </div>
 
 {% endblock body %}

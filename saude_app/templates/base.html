@@ -10,16 +10,20 @@
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" >
+    <link rel="icon" href="{% static 'img/ico_as.ico' %}">
     <title>{% block title %}Saude APP{% endblock title %}</title>
 </head>
 <body>
-
+    
     
     {% block body %}
     
 <!-- INICIO: Bloco do Bootstrap a ser incluido -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'auth_users:user_login' %}">  Saude App</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navPadding">
+    <a class="navbar-brand" href="{% url 'auth_users:user_login' %}"> 
+      <img src="{% static 'img/logo_blue_menu.svg' %}" width= 50px height= 50px >
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -54,7 +58,7 @@
 <!-- FIM: Bloco do Bootstrap a ser incluido -->
     {% endblock body %}
     
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
     <script src="{% static 'js/jquery.mask.min.js' %}"></script>
     <script src="{% static 'js/jquery-ui.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

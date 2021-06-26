@@ -9,12 +9,14 @@
 {% endblock title %}
 
 {% block body %}
-
+{{ block.super }}
     <div class="container">
         <br />
-    <h5><b>Cadastro de medicamento</b></h5>
+    
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Cadastro de medicamento</b></h2>
+                <br />
                 <form action="" method="POST" enctype="multipart/form-data"> 
                 {% csrf_token %}
                 <div class="form-group">
@@ -29,26 +31,32 @@
                     <label for="{{ form.date_fabrication.id_for_label }}">Data de fabricacao</label>
                     {{ form.date_fabrication|add_class:"form-control" }}
                 </div>
+                <br />
                 <div class="form-group">
                     <label for="{{ form.is_active.id_for_label }}">Ativar</label>
                     {{ form.is_active }}
                 </div>
+                <br />
                 <div class="form-group">
                     <label for="{{ form.category.id_for_label }}">Categoria</label>
                     {{ form.category|add_class:"form-control" }}
                 </div>
+                <br />
                 <div class="form-group">
                     <label for="{{ form.photo.id_for_label }}">Foto</label>
                     {{ form.photo|add_class:"form-control-file" }}
                 </div>
+                <br />
                 <div class="form-group">
                     <label for="{{ form.doc.id_for_label }}">Documentos</label>
                     {{ form.doc|add_class:"form-control-file" }}
                 </div>
-                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                <br />
+                <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
             </div>
         </div>
+        <br />
     </div>
 
 {% endblock body %}
