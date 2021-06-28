@@ -1,5 +1,5 @@
 from django import forms
-from .models import MinisteredMedicines, Patient, MinisteredMedicinesItem
+from .models import MinisteredMedicines, Patient, MinisteredMedicineItem, Medicine
 
 class MinisteredMedicinesForm(forms.ModelForm):
     
@@ -7,8 +7,8 @@ class MinisteredMedicinesForm(forms.ModelForm):
         model = MinisteredMedicines
         exclude = ('patient', 'created_on' , 'updated_on')
 
-class MinisteredMedicinesItemForm(forms.ModelForm):
+class MinisteredMedicineItemForm(forms.ModelForm):
     
     class Meta:
-        model = MinisteredMedicinesItem
+        model = MinisteredMedicineItem
         exclude = ('ministered_medicines', 'created_on' , 'updated_on')
