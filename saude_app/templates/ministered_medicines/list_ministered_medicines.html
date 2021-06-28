@@ -22,7 +22,6 @@
                     <th scope="col">Paciente</th>
                     <th scope="col">Itens de Medicamentos Ministrados</th>
                     <th scope="col"></th>
-                    <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,13 +42,12 @@
                                 <br /><br />
                                 {% for ministered_medicines_item in ministered_medicines_items %}
                                     {% if ministered_medicines_item.ministered_medicines_id == ministered_medicines.id %}
+                                        Medicamento: {{ ministered_medicines_item.medicine}}<br />
                                         Quantidade: {{ ministered_medicines_item.quantity}}<br />
+                                        Data: {{ ministered_medicines_item.date}}<br />
                                         <a href="{% url 'ministered_medicines:delete_ministered_medicines_item' ministered_medicines_item.id %}">Excluir Item</a><br /><br />
                                     {% endif %}
                                 {% endfor %}
-                            </td>
-                            <td>
-                                <a href="{% url 'ministered_medicines:edit_ministered_medicines_status' ministered_medicines.id %}" class="btn btn-danger btn-sm ">Alterar</a>
                             </td>
                             <td>
                                 <a href="{% url 'ministered_medicines:delete_ministered_medicines' ministered_medicines.id %}" class="btn btn-danger btn-sm ">Excluir</a>

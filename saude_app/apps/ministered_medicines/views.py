@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import MinisteredMedicinesForm, MinisteredMedicineItemForm
 from .models import MinisteredMedicines , MinisteredMedicineItem, Patient, Medicine
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
-
+@login_required(login_url='/autenticacao/login/')
 def add_ministered_medicines(request, id_patient):
     template_name = 'ministered_medicines/add_ministered_medicines.html'
     context = {}
@@ -19,6 +19,7 @@ def add_ministered_medicines(request, id_patient):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def list_ministered_medicines(request):
     template_name = 'ministered_medicines/list_ministered_medicines.html'
     ministered_medicines = MinisteredMedicines.objects.filter()
@@ -33,11 +34,13 @@ def list_ministered_medicines(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def delete_ministered_medicines(request, id_ministered_medicines):
     ministered_medicines = MinisteredMedicines.objects.get(id=id_ministered_medicines)
     ministered_medicines.delete()
     return redirect('ministered_medicines:list_ministered_medicines')
 
+@login_required(login_url='/autenticacao/login/')
 def add_ministered_medicines_item(request, id_ministered_medicines):
     template_name = 'ministered_medicines/add_ministered_medicines_item.html'
     context = {}
@@ -53,11 +56,13 @@ def add_ministered_medicines_item(request, id_ministered_medicines):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def delete_ministered_medicines_item(request, id_ministered_medicines_item):
     ministered_medicinesitem = MinisteredMedicineItem.objects.get(id=id_ministered_medicines_item)
     ministered_medicinesitem.delete()
     return redirect('ministered_medicines:list_ministered_medicines')
 
+@login_required(login_url='/autenticacao/login/')
 def edit_ministered_medicines_status(request, id_ministered_medicines):
     template_name = 'ministered_medicines/edit_ministered_medicines_status.html'
     context ={}

@@ -7,6 +7,7 @@ class MinisteredMedicines(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     ministered_medicine_item = models.ManyToManyField(Medicine, through='MinisteredMedicineItem', blank=True)
+     
     class Meta:
         verbose_name = 'Medicamento Ministrado'
         verbose_name_plural = 'Medicamentos Ministrados'
@@ -21,7 +22,7 @@ class MinisteredMedicineItem(models.Model):
     quantity = models.IntegerField('Quantidade',null=True, blank=True,default=0)
     ministered_medicines = models.ForeignKey(MinisteredMedicines, on_delete=models.CASCADE)
     medicine = models.ForeignKey(Medicine, on_delete=models.CASCADE)
-
+    date = models.DateField('Data', auto_now=False, auto_now_add=False)
     class Meta:
         verbose_name = 'Item de Medicamento Ministrado'
         verbose_name_plural = 'Itens de Medicamento Ministrado'
