@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import MinisteredMedicinesForm, MinisteredMedicinesItemForm
-from .models import MinisteredMedicines , MinisteredMedicinesItem, Patient
+from .forms import MinisteredMedicinesForm, MinisteredMedicineItemForm
+from .models import MinisteredMedicines , MinisteredMedicineItem, Patient, Medicine
 
 # Create your views here.
 
@@ -22,12 +22,14 @@ def add_ministered_medicines(request, id_patient):
 def list_ministered_medicines(request):
     template_name = 'ministered_medicines/list_ministered_medicines.html'
     ministered_medicines = MinisteredMedicines.objects.filter()
-    ministered_medicines_items = MinisteredMedicinesItem.objects.filter()
+    ministered_medicines_items = MinisteredMedicineItem.objects.filter()
     patients = Patient.objects.filter()
+    medicines = Medicine.objects.filter()
     context = {
         'ministered_medicines': ministered_medicines,
         'ministered_medicines_items': ministered_medicines_items,
-        'patients': patients
+        'patients': patients,
+        'medicines': medicines
     }
     return render(request, template_name, context)
 
@@ -40,19 +42,19 @@ def add_ministered_medicines_item(request, id_ministered_medicines):
     template_name = 'ministered_medicines/add_ministered_medicines_item.html'
     context = {}
     if request.method == 'POST':
-        form = MinisteredMedicinesItemForm(request.POST)
+        form = MinisteredMedicineItemForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
             f.ministered_medicines = MinisteredMedicines.objects.get(id=id_ministered_medicines)
             f.save()
             form.save_m2m()
             return redirect('ministered_medicines:list_ministered_medicines')
-    form = MinisteredMedicinesItemForm()
+    form = MinisteredMedicineItemForm()
     context['form'] = form
     return render(request, template_name, context)
 
 def delete_ministered_medicines_item(request, id_ministered_medicines_item):
-    ministered_medicinesitem = MinisteredMedicinesItem.objects.get(id=id_ministered_medicines_item)
+    ministered_medicinesitem = MinisteredMedicineItem.objects.get(id=id_ministered_medicines_item)
     ministered_medicinesitem.delete()
     return redirect('ministered_medicines:list_ministered_medicines')
 

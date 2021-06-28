@@ -4,17 +4,18 @@
 
 {% block title %}
 
-    Adicionar Item de Medicamento Ministrado - {{ block.super }}
+    Adicionar Medicamento Ministrado - {{ block.super }}
 
 {% endblock title %}
 
 {% block body %}
-
+{{ block.super }}
     <div class="container">
         <br />
-    <h5><b>Adicionar Item de Medicamento Ministrado</b></h5>
+
         <div class="row">
-            <div class ="col-md-12">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Adicionar Medicamento Ministrado</b></h2>
                 <form action="" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
@@ -22,12 +23,8 @@
                     {{ form.quantity|add_class:"form-control" }}
                 </div>
                 <div class="form-group">
-                    <label for="{{ form.unitary_price.id_for_label }}">Preco Unitario</label>
-                    {{ form.unitary_price|add_class:"form-control" }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.product.id_for_label }}">Produto</label>
-                    {{ form.product|add_class:"form-control" }}
+                    <label for="{{ form.medicine.id_for_label }}">Medicamento</label>
+                    {{ form.medicine|add_class:"form-control" }}
                 </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
