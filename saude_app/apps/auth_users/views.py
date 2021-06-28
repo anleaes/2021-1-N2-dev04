@@ -14,6 +14,7 @@ def add_user(request):
             f = form.save(commit=False)
             f.set_password(f.password)
             f.save()
+            return redirect('core:home')
     form = UserForm()
     context['form'] = form
     return render(request, template_name, context)
@@ -45,6 +46,7 @@ def user_change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
+            return redirect('core:home')
         else:
             return redirect('auth_users:user_login')
     form = PasswordChangeForm(user=request.user)
@@ -60,6 +62,7 @@ def user_change_information(request, username):
         form = UserChangeInformationForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
+            return redirect('core:home')
     form = UserChangeInformationForm(instance=user)
     context['form'] = form
     return render(request, template_name, context)
