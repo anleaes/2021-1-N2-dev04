@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Medicamentos Ministrados - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{ block.super }}
+    <div class="container">
+        <br />
+    
+        <div class="row">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Deseja adicionar um novo medicamento ministrado? </b></h2>
+                <form action="" method="POST">
+                {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-sm">Sim</button>   <a href="{% url 'patients:list_patients' %}" class="btn btn-primary btn-sm">Nao</a>     
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

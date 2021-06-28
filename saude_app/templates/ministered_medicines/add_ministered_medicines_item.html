@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Adicionar Medicamento Ministrado - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{ block.super }}
+    <div class="container">
+        <br />
+
+        <div class="row">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Adicionar Medicamento Ministrado</b></h2>
+                <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.quantity.id_for_label }}">Quantidade</label>
+                    {{ form.quantity|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.medicine.id_for_label }}">Medicamento</label>
+                    {{ form.medicine|add_class:"form-control" }}
+                </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>       
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
