@@ -1,13 +1,9 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
-
-
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import UserForm, UserChangeInformationForm
-
 
 def add_user(request):
     template_name = 'auth_users/add_user.html'
@@ -18,6 +14,7 @@ def add_user(request):
             f = form.save(commit=False)
             f.set_password(f.password)
             f.save()
+            return redirect('core:home')
     form = UserForm()
     context['form'] = form
     return render(request, template_name, context)
@@ -35,10 +32,12 @@ def user_login(request):
             return redirect('auth_users:user_login')
     return render(request, template_name, {})
 
+@login_required(login_url='/autenticacao/login/')
 def user_logout(request):
     logout(request)
     return redirect('auth_users:user_login')
 
+@login_required(login_url='/autenticacao/login/')
 def user_change_password(request):
     template_name = 'auth_users/user_change_password.html'
     context = {}
@@ -47,12 +46,14 @@ def user_change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, form.user)
+            return redirect('core:home')
         else:
             return redirect('auth_users:user_login')
     form = PasswordChangeForm(user=request.user)
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def user_change_information(request, username):
     template_name = 'auth_users/user_change_information.html'
     context = {}
@@ -61,6 +62,7 @@ def user_change_information(request, username):
         form = UserChangeInformationForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
+            return redirect('core:home')
     form = UserChangeInformationForm(instance=user)
     context['form'] = form
     return render(request, template_name, context)

@@ -1,9 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import HealthProfessionalsForm
 from .models import HealthProfessional
 
-# Create your views here.
-
+@login_required(login_url='/autenticacao/login/')
 def add_health_professionals(request):
     template_name = 'health_professionals/add_health_professionals.html'
     context = {}
@@ -17,6 +17,8 @@ def add_health_professionals(request):
     form = HealthProfessionalsForm()
     context['form'] = form
     return render(request, template_name, context)
+
+@login_required(login_url='/autenticacao/login/')
 def list_health_professionals(request):
     template_name = 'health_professionals/list_health_professionals.html'
     health_professionals = HealthProfessional.objects.filter()
@@ -25,6 +27,7 @@ def list_health_professionals(request):
     }
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def edit_health_professionals(request, id_health_professionals):
     template_name = 'health_professionals/add_health_professionals.html'
     context ={}
@@ -38,6 +41,7 @@ def edit_health_professionals(request, id_health_professionals):
     context['form'] = form
     return render(request, template_name, context)
 
+@login_required(login_url='/autenticacao/login/')
 def delete_health_professionals(request, id_health_professionals):
     health_professionals = HealthProfessional.objects.get(id=id_health_professionals)
     health_professionals.delete()
