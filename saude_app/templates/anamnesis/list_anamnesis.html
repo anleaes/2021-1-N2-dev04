@@ -44,6 +44,8 @@
                             <td>{{ AnAnamnesis.family_history }}</td>
                             <td>
                                 <a href="{% url 'anamnesis:edit_anamnesis' AnAnamnesis.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
                                 <a href="{% url 'anamnesis:delete_anamnesis' AnAnamnesis.id %}" class="btn btn-danger btn-sm ">Excluir</a>
                             </td>
                         </tr> 

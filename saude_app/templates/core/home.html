@@ -2,12 +2,48 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {{ block.super }}
+
+Evolução de Pacientes - {{ block.super }}
+
 {% endblock title %}
 
 {% block body %}
-
-<!-- Codigo html especifico desse arquivo -->
 {{ block.super }}
+
+<div class="container">
+    <br />
+    
+    <div class="row">
+        <div class ="col-md-12" id=gbOpacity>
+            <h2><b>Evolução de Pacientes</b></h2>
+            <br />
+            <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Paciente</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+<tbody>
+                {% for patient in patients %}
+                    <tr>
+                        <th scope="row">{{ patient.id }}</th>
+                        <td>{{ patient }}</td>
+                        <td>
+                            <a href="{% url 'patients:edit_patient' patient.id %}" class="btn btn-primary btn-sm">Histórico</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'ministered_medicines:add_ministered_medicines' patient.id %}" class="btn btn-danger btn-sm ">Ministrar Medicamento</a>
+                        </td>
+                    </tr> 
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 
 {% endblock body %}
