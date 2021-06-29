@@ -20,7 +20,6 @@ Evolução de Pacientes - {{ block.super }}
             <table class="table table-hover">
             <thead>
                 <tr>
-                <th scope="col">#</th>
                 <th scope="col">Paciente</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -29,8 +28,7 @@ Evolução de Pacientes - {{ block.super }}
 <tbody>
                 {% for patient in patients %}
                     <tr>
-                        <th scope="row">{{ patient.id }}</th>
-                        <td>{{ patient }}</td>
+                        <th scope="row">{{ patient }}</th>
                         <td>
                             <a href="{% url 'patient_evolution:list_patient_evolution' patient.id %}" class="btn btn-primary btn-sm">Evolução Paciente</a>
                         </td>
@@ -43,6 +41,7 @@ Evolução de Pacientes - {{ block.super }}
             </table>
         </div>
     </div>
+    <br/>
 </div>
 
 
