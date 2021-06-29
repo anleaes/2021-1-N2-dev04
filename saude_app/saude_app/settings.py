@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'anamnesis.apps.AnamnesisConfig',
     'vital_signs.apps.VitalSignsConfig',
     'ministered_medicines.apps.MinisteredMedicinesConfig',
+    'patient_evolution.apps.PatientEvolutionConfig',
 ]
 
 MIDDLEWARE = [
