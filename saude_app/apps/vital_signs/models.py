@@ -18,7 +18,7 @@ class VitalSign(models.Model):
     class Meta:
         verbose_name = 'Sinal Vital'
         verbose_name_plural = 'Sinais Vitais'
-        ordering =['-created_on']
+        ordering =['date']
 
     def __str__(self):
         return "Sinais Vitais Paciente %s" % (self.patient) 

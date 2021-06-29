@@ -11,8 +11,9 @@ class Anamnesis(models.Model):
     allergies =  models.CharField('Alergias', max_length=200)
     habits =  models.CharField('Habitos de Vida', max_length=200)
     family_history = models.CharField('Histórico Familiar', max_length=200)
-    
+    date = models.DateField('Data', auto_now=False, auto_now_add=False) 
+
     class Meta:
         verbose_name = 'Anamnese'
         verbose_name_plural = 'Anamneses'
-        ordering =['id']
+        ordering =['date']

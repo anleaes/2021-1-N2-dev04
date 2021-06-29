@@ -22,13 +22,12 @@
                 <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Data</th>
                     <th scope="col">Paciente</th>
                     <th scope="col">Frequência Cardíaca</th>
                     <th scope="col">Frequência Respiratória</th>
                     <th scope="col">Temperatura Corporal</th>
                     <th scope="col">Pressão Arterial</th>
-                    <th scope="col">Data Medição</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -36,13 +35,12 @@
                 <tbody>
                     {% for vital_sign in vital_signs %}
                         <tr>
-                            <th scope="row">{{ vital_sign.id }}</th>
+                            <th scope="row">{{ vital_sign.date }}</th>
                             <td>{{ vital_sign.patient }}</td>
                             <td>{{ vital_sign.heart_rate }}</td>
                             <td>{{ vital_sign.respiratory_frequency }}</td>
                             <td>{{ vital_sign.body_temperature }}</td>
                             <td>{{ vital_sign.blood_pressure }}</td>
-                            <td>{{ vital_sign.date }}</td>
                             <td>    
                                 <a href="{% url 'vital_signs:delete_vital_sign' vital_sign.id %}" class="btn btn-danger btn-sm ">Excluir</a>
                             </td>
