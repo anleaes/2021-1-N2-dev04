@@ -22,7 +22,7 @@
                 <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Data</th>
                     <th scope="col">Profissional da saúde</th>
                     <th scope="col">Queixa Principal</th>
                     <th scope="col">Alergias</th>
@@ -33,7 +33,7 @@
                 <tbody>
                     {% for AnAnamnesis in anamnesis %}
                         <tr>
-                            <th scope="row">{{ AnAnamnesis.id }}</th>
+                            <th scope="row">{{ AnAnamnesis.date }}</th>
                             <td>{{ AnAnamnesis.health_professional }}</td>
                             <td>{{ AnAnamnesis.main_complaint }}</td>
                             <td>{{ AnAnamnesis.allergies }}</td>
@@ -50,12 +50,11 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Data</th>
                         <th scope="col">Frequência Cardíaca</th>
                         <th scope="col">Frequência Respiratória</th>
                         <th scope="col">Temperatura Corporal</th>
                         <th scope="col">Pressão Arterial</th>
-                        <th scope="col">Data Medição</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                         </tr>
@@ -63,12 +62,11 @@
                     <tbody>
                         {% for vital_sign in vital_signs %}
                             <tr>
-                                <th scope="row">{{ vital_sign.id }}</th>
+                                <th scope="row">{{ vital_sign.date }}</th>
                                 <td>{{ vital_sign.heart_rate }}</td>
                                 <td>{{ vital_sign.respiratory_frequency }}</td>
                                 <td>{{ vital_sign.body_temperature }}</td>
                                 <td>{{ vital_sign.blood_pressure }}</td>
-                                <td>{{ vital_sign.date }}</td>
                             </tr> 
                         {% endfor %}
                     </tbody>

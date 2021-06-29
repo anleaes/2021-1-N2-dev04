@@ -32,6 +32,7 @@ urlpatterns = [
     path('sinais_vitais/', include('vital_signs.urls', namespace='vital_signs')),
     path('medicamentos_ministrados/', include('ministered_medicines.urls', namespace='ministered_medicines')),
     path('evolucao_paciente/', include('patient_evolution.urls', namespace='patient_evolution')),
+    path('especialidades/', include('specialties.urls', namespace='specialties')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

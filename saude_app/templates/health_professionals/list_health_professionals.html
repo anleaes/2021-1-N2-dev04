@@ -37,7 +37,7 @@
 <tbody>
                     {% for health_professional in health_professionals %}
                         <tr>
-                            <th scope="row">{{ health_professionals.id }}</th>
+                            <th scope="row">{{ health_professional.id }}</th>
                             <td>{{ health_professional.crm }}</td>
                             <td>{{ health_professional.first_name }}</td>
                             <td>{{ health_professional.last_name }}</td>
@@ -45,7 +45,7 @@
                             <td>{{ health_professional.cell_phone }}</td>
                             <td>{{ health_professional.email }}</td>
                             <td>{{ health_professional.gender }}</td>
-                            <td>{{ health_professional.medical_speciality }}</td>
+                            <td>{{ health_professional.specialty }}</td>
                             <td>
                                 <a href="{% url 'health_professionals:edit_health_professionals' health_professional.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>

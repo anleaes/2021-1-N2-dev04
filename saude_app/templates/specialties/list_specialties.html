@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Especialidades - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{ block.super }}
+    <div class="container">
+        <br />
+        
+        <div class="row">
+            <div class ="col-md-12" id=gbOpacity>
+                <h2><b>Lista de Especialidades</b></h2>
+                <br />
+                 <a href="{% url 'specialties:add_specialty' %}">Cadastro de nova Especialidade</a>
+                <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for specialty in specialties %}
+                        <tr>
+                            <th scope="row">{{ specialty.id }}</th>
+                            <td>{{ specialty.name }}</td>
+                            <td>{{ specialty.description }}</td>
+                            <td>
+                                <a href="{% url 'specialties:edit_specialty' specialty.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <a href="{% url 'specialties:delete_specialty' specialty.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>
+
+{% endblock body %}

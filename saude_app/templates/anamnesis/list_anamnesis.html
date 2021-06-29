@@ -23,7 +23,7 @@
                 <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Data</th>
                     <th scope="col">Profissional da saúde</th>
                     <th scope="col">Paciente</th>
                     <th scope="col">Queixa Principal</th>
@@ -35,7 +35,7 @@
                 <tbody>
                     {% for AnAnamnesis in anamnesis %}
                         <tr>
-                            <th scope="row">{{ AnAnamnesis.id }}</th>
+                            <th scope="row">{{ AnAnamnesis.date }}</th>
                             <td>{{ AnAnamnesis.health_professional }}</td>
                             <td>{{ AnAnamnesis.patients }}</td>
                             <td>{{ AnAnamnesis.main_complaint }}</td>
