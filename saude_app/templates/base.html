@@ -1,79 +1,93 @@
-
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}" >
-    <link rel="icon" href="{% static 'img/ico_as.ico' %}">
-    <title>{% block title %}Saude APP{% endblock title %}</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link rel="icon" href="{% static 'img/ico_as.ico' %}">
+  <title>{% block title %}Saude APP{% endblock title %}</title>
 </head>
+
 <body>
-    
-    
-    {% block body %}
-    
-<!-- INICIO: Bloco do Bootstrap a ser incluido -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark navPadding">
-    <a class="navbar-brand" href="{% url 'core:home' %}"> 
-      <img src="{% static 'img/logo_blue_menu.svg' %}" width= 50px height= 50px >
+
+
+  {% block body %}
+
+  <!-- INICIO: Bloco do Bootstrap a ser incluido -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navPadding">
+    <a class="navbar-brand" href="{% url 'core:home' %}">
+      <img src="{% static 'img/logo_blue_menu.svg' %}" width=50px height=50px>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+      aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     {% if user.is_authenticated %}
     <div class="collapse navbar-collapse" id="navbarsExample05">
-        <ul class="navbar-nav">
-          <a class="nav-link " href="{% url 'core:home' %}" aria-expanded="false">Home</a>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">Cadastro</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown05">
-                 <a class="dropdown-item" href="{% url 'health_professionals:list_health_professionals' %}">Profissionais da Saúde</a>
-                  <a class="dropdown-item" href="{% url 'patients:list_patients' %}">Pacientes</a>
-                  <a class="dropdown-item" href="{% url 'anamnesis:list_anamnesis' %}">Anamnese</a>
-                  <a class="dropdown-item" href="{% url 'vital_signs:list_vital_signs' %}">Sinais vitais</a>
-                  <a class="dropdown-item" href="{% url 'ministered_medicines:list_ministered_medicines' %}">Medicamentos Ministrados</a>
-                  <a class="dropdown-item" href="{% url 'medicines:list_medicines' %}">Medicamentos</a>
-                  <a class="dropdown-item" href="{% url 'categories:list_categories' %}">Categorias</a>
-                  <a class="dropdown-item" href="{% url 'specialties:list_specialties' %}">Especialidades</a>
-                </div>
-              </li>
-              </ul>
-              </div>
-              <div>
-              <form action="{% url 'core:search_patients' %}" method="GET" class="form-inline my-2 my-md-0" style="margin-right: 10px">
-                <input class="form-control" name="query" type="text" placeholder="Sobrenome do paciente" aria-label="Buscar" style="margin-right: 10px">
-                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-            </div>
-            <div>
-              <ul class="navbar-nav">
-                <li  class="dropdown navbar-right">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">{{ user.get_full_name|default:user.username }}</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                  <li><a class="dropdown-item" href="{% url 'auth_users:user_change_information' user.username %}">Editar Conta</a></li>
-                  <li><a class="dropdown-item" href="{% url 'auth_users:user_change_password' %}">Trocar senha</a></li>
-                  <li><a class="dropdown-item" href="{% url 'auth_users:add_user' %}">Adicionar Conta</a></li>
-                  <li><a class="dropdown-item" href="{% url 'auth_users:user_logout' %}">Sair</a></li>
-                </ul>
-              </ul>
+      <ul class="navbar-nav">
+        <a class="nav-link " href="{% url 'core:home' %}" aria-expanded="false">Home</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown"
+            aria-expanded="false">Cadastro</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown05">
+            <a class="dropdown-item" href="{% url 'anamnesis:list_anamnesis' %}">Anamnese</a>
+            <a class="dropdown-item" href="{% url 'categories:list_categories' %}">Categorias</a>
+            <a class="dropdown-item" href="{% url 'specialties:list_specialties' %}">Especialidades</a>
+            <a class="dropdown-item" href="{% url 'medicines:list_medicines' %}">Medicamentos</a>
+            <a class="dropdown-item" href="{% url 'ministered_medicines:list_ministered_medicines' %}">Medicamentos
+              Ministrados</a>
+            <a class="dropdown-item" href="{% url 'patients:list_patients' %}">Pacientes</a>
+            <a class="dropdown-item" href="{% url 'health_professionals:list_health_professionals' %}">Profissionais da
+              Saúde</a>
+            <a class="dropdown-item" href="{% url 'vital_signs:list_vital_signs' %}">Sinais Vitais</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <form action="{% url 'core:search_patients' %}" method="GET" class="form-inline my-2 my-md-0"
+        style="margin-right: 10px">
+        <input class="form-control" name="query" type="text" placeholder="Sobrenome do paciente" aria-label="Buscar"
+          style="margin-right: 10px">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+    <div>
+      <ul class="navbar-nav">
+        <li class="dropdown navbar-right">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown"
+            aria-expanded="false">{{ user.get_full_name|default:user.username }}</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown05">
+            <li><a class="dropdown-item" href="{% url 'auth_users:user_change_information' user.username %}">Editar
+                Conta</a></li>
+            <li><a class="dropdown-item" href="{% url 'auth_users:user_change_password' %}">Trocar senha</a></li>
+            <li><a class="dropdown-item" href="{% url 'auth_users:add_user' %}">Adicionar Conta</a></li>
+            <li><a class="dropdown-item" href="{% url 'auth_users:user_logout' %}">Sair</a></li>
+          </ul>
+      </ul>
     </div>
     {% endif %}
-</nav>
-<!-- FIM: Bloco do Bootstrap a ser incluido -->
-    {% endblock body %}
-    
-    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
-    <script src="{% static 'js/jquery.mask.min.js' %}"></script>
-    <script src="{% static 'js/mask.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/select2.min.js' %}"></script>
+  </nav>
+  <!-- FIM: Bloco do Bootstrap a ser incluido -->
+  {% endblock body %}
+
+  {% block scripts %}
+  <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery.mask.min.js' %}"></script>
+  <script src="{% static 'js/mask.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/select2.min.js' %}"></script>
+  <script src="{% static 'js/chart.js' %}"></script>
+  {% endblock %}
 </body>
+
 </html>

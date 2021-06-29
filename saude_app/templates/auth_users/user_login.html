@@ -19,9 +19,9 @@
   <form class="form-signin" action="" method="POST">
   {% csrf_token %}
     <div id=gbOpacity >
-    <img src="{% static 'img/logo_blue.svg' %}" width= 150px height= 150px >
+    <img src="{% static 'img/logo_blue.svg' %}" width= 200px height= 200px >
     <h1 class="h3 mb-3 font-weight-normal">Identifique-se</h1>
-    </br>
+  
     <label for="username" class="sr-only">Usuario</label>
     <input type="text" id="username" name="username" class="form-control" placeholder="Nome de usuario" required autofocus>
     <label for="password" class="sr-only">Senha</label>
@@ -31,6 +31,7 @@
     </br>
     <a href="{% url 'auth_users:add_user' %}">Criar uma conta</a>
   </div>
+  </br> 
   <label class="mb-3 font-weight-normal">Criado por dev04 - 2021</label>
   </form>
   
