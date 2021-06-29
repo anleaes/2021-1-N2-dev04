@@ -32,7 +32,7 @@ Evolução de Pacientes - {{ block.super }}
                         <th scope="row">{{ patient.id }}</th>
                         <td>{{ patient }}</td>
                         <td>
-                            <a href="{% url 'patients:edit_patient' patient.id %}" class="btn btn-primary btn-sm">Histórico</a>
+                            <a href="{% url 'patient_evolution:list_patient_evolution' patient.id %}" class="btn btn-primary btn-sm">Evolução Paciente</a>
                         </td>
                         <td>
                             <a href="{% url 'ministered_medicines:add_ministered_medicines' patient.id %}" class="btn btn-danger btn-sm ">Ministrar Medicamento</a>
