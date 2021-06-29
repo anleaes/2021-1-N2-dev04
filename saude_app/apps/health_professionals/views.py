@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import HealthProfessionalsForm
-from .models import HealthProfessional
+from .models import HealthProfessional, Specialty, ProfessionalSpecialty
 
 @login_required(login_url='/autenticacao/login/')
 def add_health_professionals(request):
@@ -21,9 +21,13 @@ def add_health_professionals(request):
 @login_required(login_url='/autenticacao/login/')
 def list_health_professionals(request):
     template_name = 'health_professionals/list_health_professionals.html'
+    specialties = Specialty.objects.filter()
+    professional_specialties = ProfessionalSpecialty.objects.filter()
     health_professionals = HealthProfessional.objects.filter()
     context = {
-        'health_professionals': health_professionals
+        'health_professionals': health_professionals,
+        'specialties': specialties,
+        'professional_specialties': professional_specialties
     }
     return render(request, template_name, context)
 

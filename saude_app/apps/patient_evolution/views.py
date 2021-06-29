@@ -12,6 +12,6 @@ def list_patient_evolution(request, id_patient):
     context = {
         'patients':patients,
         'anamnesis': anamnesis,
-        'vital_signs': vital_signs,
+        'vital_signs': vital_signs
     }
     return render(request,template_name, context)
