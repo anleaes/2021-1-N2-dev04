@@ -72,7 +72,9 @@
                     </tbody>
                 </table>
                 <br/>
-
+                <div id="container">
+                <canvas id="myChart"></canvas>
+            </div>
             </div>
         </div>
         <br />
@@ -80,5 +82,34 @@
 {% endblock body %}
 
 {% block scripts %}
+<script>
+    var labels = [];
+    {% for d in dates %}
+    labels.push("{{ d }}");
+    {% endfor %}
+
+    var config = {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Frequência Cardíaca",
+                data: {{ heart_rates }},
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                   type: 'time'
+                }]
+            }
+        }
+    };
+
+    window.onload = function () {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        window.myChart = new Chart(ctx, config);
+    }
+</script>
 {{ block.super }}
 {% endblock %}
